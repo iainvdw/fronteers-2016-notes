@@ -299,3 +299,89 @@ Canvas ads laden 10x sneller dan het web.
 "Facebook becomes the mobile internet".
 
 ## Adapting to input - Jason Grigsby
+In the beginning the web was formless. We gave it form when the web was made commercial.
+
+Consensual hallucination:
+Instead of us having somebody trick us, we trick ourselves. The web never had a fixed canvas.
+
+Break free from your assumptions.
+
+1) Input is exploding
+1874: Keyboard
+1984: Mouse + GUI
+1996: Scrollwheel
+2005: Camera's
+2007: 
+
+* Multi-touch
+* Camera
+* Acceleromter
+* Proximity
+* Light
+
+2008: 
+
+* Trackpad, gestures
+* GPS
+* Voice control
+* Gyroscope + front cam
+
+2011:
+
+* BTLE
+* Siri
+
+2012: Nothing new :D
+
+2013: Fingerprint
+
+2014: NFC + Barometer
+
+2015: 3D Touch
+
+2016: Nothing new again!
+
+The pace of change matters, not the amount of changes.
+
+Almost every single year after the release of the iPhone we see new sensors and inputs added to our devices.
+
+Hover on touch devices is coming back with soft-capactive input.
+
+We can no longer make assumptions about input based on screen size or form factor.
+
+Input is exploding, it's a continuum, undetectable and transient.
+
+Instead of trying to detect input, just support the types of inputs that are there. Detecting input when it is used, is too late and unreliable.
+
+Design for multiple concurrent inputs. Input is not binary, multiple inputs can be used at the same time.
+
+Do not disable other types of input when another is used.
+
+Abstract baseline input.
+
+Think of point and select instead of tap and click, as they have specific types of inputs associated with them.
+
+Pointer Events spec normalizes touch, mouse and stylus.
+
+Edge + FF + Chrome support it. Safari opposes. Surprising.
+
+jQuery has Pointer Events Polyfill, PEP.
+
+Think of applying different kinds of inputs in the same way, like using hover and gyroscope to achieve the same effect.
+
+All new kinds of APIs to help us adapt to input.
+
+* Payments
+* Autofill
+* Camera
+* Speech recognition
+* Web Bluetooth
+
+The web can win in speed as the inputs and UI needed to interact with these APIs is already present in the browser.
+
+For some people, some types of input are faster than the "regular" types of input. Don't judge the types of input. Adapt to them.
+
+Don't worry about different types of input, don't make erroneous assumptions.
+
+'From a "do not harm" perspective, my hope is that people are going to stop thinking form factors have particular types of input.'
+
