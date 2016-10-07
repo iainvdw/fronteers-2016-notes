@@ -201,7 +201,7 @@ Mogelijkheden om inputs te integreren:
 
 ## Big data, big impact - Lodewijk Nauta
 
-¯\\\_(ツ)_/¯
+Not quite sure what to make of this.
 
 ## Scaling front-end development - Monika Piotrowicz
 "What is a FE developer?"
