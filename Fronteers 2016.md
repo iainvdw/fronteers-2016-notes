@@ -714,3 +714,63 @@ Social coding sites to learn stuff on animation.
 Web animation workshops with Val Head.
 
 SVG animation book coming out next year.
+
+## World-wide web, not wealth western web - Bruce Lawson
+HTML-coholic :')
+
+Thanks Bruce for the awesome Rick Roll.
+
+Wants to make the web better for..
+
+* Developers
+* Consumers
+* Business owners
+* The next 4 billion people.
+
+Not even half of the world population is on the internet.
+
+Where will your next customers come from? You don't know. 
+
+You can't predict the unpredictable.
+
+There are more people in a large circle in Asia than there are in the rest of the world outside of the circle.
+
+Lots of potential in the Asia region. Massive growth in GDP and mobile connections over the last couple of years.
+
+Out of 690 million internet users in China, 620 go online with a mobile device. And mobile only.
+
+People want to consume the same kinds of information, entertainment, etc. but with huge differences in handsets.
+
+Making the web work on lower-end devices.
+
+Native apps take up space. PWA apps live on the web. Cheaper phones have less storage. Lower-end handsets don't have massive storage amounts.
+
+A 30MB APK takes 30minutes to download over 2G.
+
+Best PWA's come from Asia and Indonesia. Low overhead to install on mobile devices compared to native apps.
+
+Use a manifest in the <head>, it degrades in browsers that don't support it.
+
+No app store, no gate keepr, no update distribution lag, can work offline, linkable.
+
+Data is really expensive in upcoming countries.
+
+Advertising is becoming a parasite that is slowly killing the host. We need to control it as upcoming countries pay big cache.
+
+Opera Mini catches requests to sites. It fetches data over a fast connection and sends it back in one TCP response. It offloads the already overloaded network in the upcoming countries. **Last month** they compressed 29PB of data. CERN alone generates 30PB of data **per year**.
+
+This is why PE is important: Opera Mini does not always exectute all JS on your site. Don't make your site reliant on JS, so you will get the business instead of you competitor who might require JS.
+
+SVG > icon fonts <3
+
+"It doesn't matter how smart your phone is if your network is dumb".
+
+What can we do?
+
+* PE
+* Feature detect
+* Compress
+* Perf matters
+* PWA
+* Test opera mini
+
