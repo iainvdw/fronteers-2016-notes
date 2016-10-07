@@ -447,3 +447,70 @@ Avoid the yo-yo effect. Lose weight, gain weight. Don't optimize perf once and f
 "Browsing should be as simple and fast as turning a page in a magazine"
 - Larry Page
 
+## Building responsive CSS components - Zell Liew
+
+How do we build responsive components?
+
+Components should be modular and scalable. But they're buzz words, what do they mean?
+
+### Modular
+'Composed of standardized units for easy construction'
+
+* Markup structure
+* CSS selectors
+* Naming convention
+* DRY
+
+### Scalabe
+'To adjust in amount according to a fixed scale or proportion'
+
+Scale components proportionally at the same rate.
+
+Use responsive units for typography (rem, vw)
+
+How much do we need to scale?
+
+### Design principles
+Principle of repetition. Repetition brings familiarity. 
+
+* Limit number of font-sizes, and repeat them
+* We don't need infinite scales. Extrapolate the scales from the design you actually need.
+* Use consistent whitespace. Vertical rhythm!
+
+Rem vs Em
+
+Em is a unit of typograhpy equal to the currently specified font-size. Problem with `em` is that it's difficult to wrap your head around.
+
+Rem is equal to root font-size. So 1 Rem is always the same size no matter where you specify it.
+
+Em is a local var, Rem is a global var. Local vars are good, Global var is bad. 
+
+Use `em` when it's relative to a font-size, otherwise use `rem`.
+
+Using lots of media queries leads to complication.
+
+Use sensible defaults for base components and apply modifiers for components in different contexts. But even that is not very scalable as modifiers have to be applied manually based on placement.
+
+### Element queries
+Media queries query the size of the viewport. Element queries query the size of the component itself.
+
+Not really supported yet, so should be polyfilled with JS.
+
+
+It's not really about you wanting to scale your components. Talk to your designer and discuss what makes sense.
+
+Extract base styles from components, and use them as mixins in various contexts to avoid repetition.
+
+### Summary
+* Make component area maps
+* Implement changes early and see what happens instead of changing the design time after time 
+* Determine breakpoints and changes in styles
+* Determine units for CSS properties
+* Establish a line of communication between front-end and design and discuss changes and solutions
+* Handle complex variations with mixins or elem queries
+* **Don't over-engineer**
+
+Use vertical rhythm (baseline) helper classes to help with scaling, repetition.
+
+Take localization in the design process, compensate for different word or sentence lengts in the design process when your project has to be localized.
+
