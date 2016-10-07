@@ -385,3 +385,65 @@ Don't worry about different types of input, don't make erroneous assumptions.
 
 'From a "do not harm" perspective, my hope is that people are going to stop thinking form factors have particular types of input.'
 
+## Cheat sheet to a lean website - Barbara Bermes
+People don't like to wait, be resepectful.
+
+Websites are getting bigger, but data is still expensive and latency is high.
+
+Make everybody care about performance.
+
+Feel empowered and encouraged to say no.
+
+Celebrate success! It's a good feeling to have made your website faster and improve its performance.
+
+How long does it take my user to start interacting with my page? Discuss it with the designers / ux team.
+
+Treat speed as a feature!
+
+Wireframe for performance. Perf point system:
+
+* Use webpagetest.org to generate load timelines
+* Determine load time importance in the wireframes. Place boxes at certain timeframes
+* MPM: Measurable Performance Modules
+* Show above the fold asap, but determine importance in loading priority within the visible items. Not everything is equally important (stock tickers, ads, hi-res images, etc)
+
+Use a perf budget. Establish a baseline how fast a website should be loading / performing.
+
+Speed testing tools:
+
+* SpeedIndex
+* PageSpeed
+* SpeedCurve
+
+Determine critical rendering path.
+
+14k rule: serve the most important content first.
+
+Above the fold styles should go inline.
+
+Use async and/or defer to load js as fast as possible and without render blocking. Scripts at the bottom of the page.
+
+Reduce bytes.
+
+* Minify assets
+* Images are biggest win targets
+* Encode base64
+* Avoid custom fonts or use a loader
+* Use compression
+* Reduce HTTP requests
+
+Fight latency
+
+* Reduce requests
+* mobile has highest latency
+* Use CDN's
+* Use offline storage
+* use HTTP/2 for concurrency and reduced latency.
+
+Use task runnrs to help automate perf issues. Implement in your CI.
+
+Avoid the yo-yo effect. Lose weight, gain weight. Don't optimize perf once and forget about it. Continuously measure perf.
+
+"Browsing should be as simple and fast as turning a page in a magazine"
+- Larry Page
+
