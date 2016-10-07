@@ -551,9 +551,11 @@ The green padlock will degrade to neutral UI when mixed content images are loade
 
 ### Strict transport security (HSTS)
 **Without HSTS**
+
 HTTP requests to HTTPS domains get a 301 redirect to HTTPS. Redirects are slow, 300ms for redirects. SSL can be stripped out by a mitm attack.
 
 **With HSTS**
+
 HSTS solves this issue. It's again a HTTP header.
 
 `Strict-Transport-Security: max-age <nr>`
@@ -599,3 +601,116 @@ Premium SSL certificates are a dated model, it should be enabled by default. Mig
 
 Anywhere you can inject the security headers is a good place. Server config, application level, load balancers, etc.
 
+## Functional animation - Sarah Drasner
+Consultant in UX Design and engineering
+
+Staff writer for CSS tricks.
+
+People make a mental map of what's around them.
+
+Wny is this important?
+
+* Websites strat to look the same
+* Buttons on a website as CTA
+* Growth-hacking
+* User-testing
+
+Animation gets a bad rap (rep?).
+
+You draw your eye to a moving thing. When used improperly, it's distracting.
+
+Invisible anim vs immersive anim
+
+invisible = guiding. immersive = drawing attention.
+
+### invisible animation
+Connect states to each other.
+
+Transition from one state to another to show users what happened.
+
+Perceived wait time using animation
+
+"If animation feels like sugar on top, that's because you treated it that way."
+
+Users ditch standard loaders on loading pages -> 14 secs wating time.
+
+Good custom loaders increase waiting time to 22 sec.
+
+### spatial awareness
+Codrops cinema demo, drag drop demo
+
+### Performance
+Opacity and transforms trigger the **least** amount of repaints. Leverage hardware acceleration. Make it a mixing to allow hardware rendering.
+
+Paint flash setting in chrome devtools to let you see repaints.
+
+### DOM/VDOM vs Canvas
+
+DOM Pro's
+
+* Great for UI/UX animation
+* Great for SVG that is resolution independent
+* Easier to debug
+
+DOM Cons:
+
+* Tanks with a lot of objects
+* You have to care about the way you animate
+
+Canvas Pro's
+
+* Dance pixels! Dance!
+* Great for 3d work
+* Movement of a lot of objects
+
+Canvas Cons
+
+* Harder to make it accessible
+* Not resolution independent out of the box. You can make it work for other pixel densities.
+* If it breaks, it breaks to nothing.
+
+### SVG
+**Very** well supported today. 
+
+* Very crips on anu dosplay.  
+* Less http requests
+* easily scalable for responsive
+small filesize if designed performance.
+* Easy to animate
+* It has a DOM
+* Accessible
+
+What is SVG anim good for?
+
+* Interactive
+* Narrative
+* UX anim
+* Prototypng
+* Data vis
+
+SVG animations *can* be really small and performant.
+
+### Greensock
+Solves crossbrowser transform origin issues
+
+You can create complex animations without recalculation of timing or keyframes.
+
+GSAP Timeline looks awesome.
+
+GSAP makes svg animation responsive and scalable.
+
+SVG's can be made accessible.
+
+### Narrative
+
+Combine with stories and sound. Really performant, works on mobile. Wow.
+
+Main principle: Design everthing first and slowsly unveil things.
+
+Hold on. Need to pick up my jaw from the floor. These demo's are awesome.
+
+Social coding sites to learn stuff on animation.
+
+Web animation workshops with Val Head.
+
+SVG animation book coming out next year.
