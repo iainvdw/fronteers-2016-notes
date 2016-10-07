@@ -774,3 +774,57 @@ What can we do?
 * PWA
 * Test opera mini
 
+## Technologic (Human afterall): Accessibility Mix - Leonie Watson
+Native browser elements have expected interactions when interacted with.
+
+New a11y API: JS API - Accessibility Object Model
+
+ARIA 1.0 - W3C REC 2014
+ARIA 1.1 - W3C WD 2016
+
+Aria roles, attributes, states.
+
+The only AT that support ARIA are screenreaders.
+
+### Inert elements
+You can 'repair' inert elements with a few attributes.
+
+`role="button"`
+
+`aria-expanded="false"`
+
+`aria-controls="content"`
+
+This is badly supported, but it lets the screenreader tell you that the content has changed.
+
+`aria-hidden="true"`
+
+This takes elements out of the a11y tree.
+
+`hidden="hidden"`
+
+Native attributes can be used as well
+
+### Tools
+Tenon API: Use it with your build tools. Install a Tenon module for Grunt, Gulp, etc. Send a request API with a key and a url param.
+
+Ember a11y test suite
+
+React a11y test suite
+
+React accessibility API
+
+Angular NGARIA - different, "code tends to be a bit more horrible" :D
+
+Test it yourself, unplug mouse, etc. and use a screenreader.
+
+Generated content will make it into the accessibility tree. Screenreaders read out CSS generated content.
+
+Changing order in flexbox, does not alter keyboard focus sequence. Use tabindex in conjunction with `order: #` to match the visual order.
+
+`aria-flowto="id"` can be used to flow to other elements. But it created a third set of navigation which is only accessible for screenreaders. No support outside of a couple of screenreaders.
+
+Firefox has a "bug" in which it reorders the keyboard sequence when visual order is changed. Could be a solution to keyboard nav issues.
+
+"It doesn't have to be perfect. Just a little bit better than yesterday."
+
