@@ -514,3 +514,88 @@ Use vertical rhythm (baseline) helper classes to help with scaling, repetition.
 
 Take localization in the design process, compensate for different word or sentence lengts in the design process when your project has to be localized.
 
+## CSP STS PKP SRI ETC OMG WTF BBQ - Scott Helme
+- a.k.a. Modern Web Security Standards
+
+### HTTPS
+Reasons to migrate to HTTPS:
+
+* HTTP/2 option performance benefits
+* Powerful features, geolocation, getUserMedia(), AppCache
+* Browsers start to phase out APIs on insecure websites.
+* Brotli compression
+* SEO boost
+
+Huge incentive to move to HTTPS. Rate of HTTPS adoption is largest in history and still increasing.
+
+Browser support is really good, no need to worry about  older browsers as they ignore the newer security rules and gracefully degrade.
+
+### Security headers
+CSP: Content Security Policy
+
+Prevents content injection attacks like XSS.
+
+It's 'just' an HTTP response header, with a number of directives. 
+
+### Mixed Content
+
+Mixed-script.badssl.com to test Mixed Content warnings in your browser.
+
+The green padlock will degrade to neutral UI when mixed content images are loaded.
+
+`block all-mixed-content` directive blocks all mixed content, like images and scripts. Browsers might block mixed content by default.
+
+`upgrade-insecure-requests` directive upgrades requests to insecure resources to HTTPS if available to try load content.
+
+`Content-security-policy-report-only` posts a report to a specified URL so you can monitor mixed content warnings. Sends a JSON report.
+
+### Strict transport security (HSTS)
+**Without HSTS**
+HTTP requests to HTTPS domains get a 301 redirect to HTTPS. Redirects are slow, 300ms for redirects. SSL can be stripped out by a mitm attack.
+
+**With HSTS**
+HSTS solves this issue. It's again a HTTP header.
+
+`Strict-Transport-Security: max-age <nr>`
+
+It overrides user input to enforce HTTPS for secure requests.
+
+### Public Key Pinning
+Browers check:
+
+* Name
+* Validity period
+* Certificate Authority
+
+Malicious CA certs might still not be trusted.
+
+HTTP reponse header:
+
+`public-key-pins: pin-sha256=<hash>; max-age=<seconds>`
+
+Hash of the key in the certificate. When you come back to my website, browsers checks hash in response header with SSL cert to see if it matches.
+
+Certificate leafs at the end on your website, need to go up to the root certificate to guarantee a green padlock. If the chain to the root CA can't be made, it's not a secure cert.
+
+You get a bit more control over who can issue certificates for certain sites.
+
+Also supports a reporting URL:
+
+`Public-Key-Pins-Report-Only: <url>`
+
+### Subresource integrity (SRI)
+We trust third parties to serve us the resources we request. There's no guarantee the resource we request even from a secure origin that the response is what we want.
+
+```js
+<script crossorigin="anonymous" integrity="sha256-<hash>">
+```
+
+The hash does all the work, it checks the hash of the response with the hash specified. If they don't match, the file is not the file that we wanted and the browser blocks it.
+
+### Q&A
+The web was built insecure by default, we didn't have HTTPS in the beginning. We're moving to a secure by default era.
+
+Premium SSL certificates are a dated model, it should be enabled by default. Migrating to HTTPS should actually be as simple as a click on a button.
+
+Anywhere you can inject the security headers is a good place. Server config, application level, load balancers, etc.
+
