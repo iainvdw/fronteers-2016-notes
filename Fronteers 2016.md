@@ -94,7 +94,7 @@ Pokemon chart!
 
 Using colors to separate groups can create confusion as the colors themselves might me interpreted as grouping or added value to the group.
 
-Voronois are awesome! Voronois create "cells" around nodes in your chart. Very useful for i.e. detecting mouseovers over nodes in chart data. Combined with outer circles you can even be more specific in the mouseover region to show extra data of the node being hovered over.
+Voronois are awesome! Voronois create "cells" around nodes in your chart. Very useful for e.g. detecting mouseovers over nodes in chart data. Combined with outer circles you can even be more specific in the mouseover region to show extra data of the node being hovered over.
 
 Don't underestimate hiding parts of your data that are irrelevant.
 
@@ -158,51 +158,42 @@ Make sure the UX is already good, **until** JS has loaded and can be improved up
 Web Workers can be used for asynchronous data operations in a separate thread, so you can offload the heavy UI thread to prevent jank. Let the UI thread only update the UI when needed, feed it data from the separate Web Worker thread so that leaves breathing room for complex DOM operations in the UI thread.
 
 ## Multi-user WebVR - Martin Splitt
-WebVR kan toegepast worden voor verschillende doeleinden
+WebVR can be applied in a number of situations:
 
-* Medisch
-* Educatie
-* Ontwerp
-* Architectuur
+* Medicine
+* Education
+* Design
+* Architectur
 * etc.
 
-De VR wereld is enorm verdeeld. GearVR, Vive, Oculus, etc. met allemaal proprietaire content.
+The VR world is quite fragmented. GearVR, Vive, Oculus, etc. Some with propietary content.
 
-WebVR haalt VR naar de browser toe, met uiteraard betere cross-platform support.
+WebVR brings VR to the browsers, which ofcourse bring cross-platform support!
 
-Kan toegepast worden met foto's, video's, 3D of een combinatie van de technieken.
+It can be used with spherical photos, 360˚ video, 3D rendering, or a combination of these techniques.
 
-WebVR kan gecombineerd worden met real-time communicatie om met meerdere mensen in dezelfde VR omgeving rond te "lopen".
+Using real-time communication with WebRTC, multiple people can be within the same VR environment and interact with it and each other. WebRTC needs a server for a one-time connection and the devices then take over and start communicating directly to each other, without the use of a server in the middle.
 
-Via WebRTC kan je directe communicatie tussen devices opzetten. Daar is eenmalig een server voor nodig om de devices elkaar te laten vinden, maar zodra er een verbinding is loopt de communicatie direct tussen de devices zonder verdere tussenkomst van server.
+THREE.s is a library on top of WebGL to make it simpler to use the WebGL API and create 3D scenes.
 
-TRHEE.js is een library als wrapper bovenop WebGL om het eenvoudig te maken om 3D scenes te maken.
+Using gradual loading, you can load a 3D world progressively to enable early interaction. When the wireframes are loaded, you are already able to walk in the 3D scene. Then additonal models can be loaded, which are then placed. Low-res environment and model textures can be fetched to make the scene a bit more graphical quite early. Then, as needed, higher resolution textures can be fetched and applied to the 3D scene.
 
-Met gradual loading kan je geleidelijk resources inladen om steeds meer te tonen (wireframe, low-res textures, objecten, hi-res textures, etc)
+Try to achieve 90-100 frames p/s because our eyes can see more than 60 fps. Higher fps means a higher possible sense of realism.
 
-Mik op 90-100 fps omdat onze ogen meer dan 60 fps zien. Hoger is beter voor beter "realisme" in een simulatie.
+Combine WebVR with the Gamepad API to be able to use a controller for navigating and interacting with the VR scene.
 
-De GamepadAPI kan erop aansluiten zodat er besturing toegevoegd kan worden aan een VR omgeving.
+DOM interaction is not (yet) possible. Buttons in the VR scene need to be hardcoded as boxes that trigger a certain action when interacted with. DOM interaction could be possible in the future so you can use actual `<button>` elements in the VR scene that trigger action in the document or VR world.
 
-Nog geen DOM interactie mogelijk. Zit wel in de planning om op te nemen zodat we via elementen in een VR omgeving interacties aan kunnen gaan met pagina's.
+The current extremes in the VR markt:
 
-De extremen:
+|Google Cardboard|HTC Vive|
+|---|---|
+|Static position|Position tracking sensors|
+|No extra sensors|Loads of sensors built-in|
+|No movement|Move around using the positing tracking|
+|No use of hands|Controlls which could be used as hands, but no fingers|
 
-Cardboard
-
-* Statisch
-* Geen sensors
-* Geen beweging
-* Geen handen
-
-Vive
-
-* Positie tracking
-* Sensors
-* "Handen", je kan dingen vasthouden
-* Geen vingers
-
-Mogelijkheden om inputs te integreren:
+Possibilities to achieve exta inputs:
 
 * Leap Motion
 * Myo
@@ -210,41 +201,42 @@ Mogelijkheden om inputs te integreren:
 
 ## Big data, big impact - Lodewijk Nauta
 
-Not quite sure what to make of this.
+Not quite sure what to make of this. Business cases how they achieved visualising some data interactively and created projects based on that data. But  no real connection with front-end, except that they needed a front-end developer to "improve the charts visuals"...
+
+Visualising Metro occupancy so extra metro carts can be deployed when needed.
+
+Visualising crowdedness in certain areas of a restaurant using WiFI and Bluetooth position tracking.
 
 ## Scaling front-end development - Monika Piotrowicz
-"What is a FE developer?"
-Valt tussen Design en App Dev, alhoewel de technieken van tegenwoordig steeds meer naar App Dev neigen.
+"What is a front-end developer?"
 
-Buggy UI is _de_ reden waarmee je vertrouwen verliest van bezoekers.
+Front-end developers position themselves on a 'spectrum' between Design and App Development, though most new techniques today gravitate more towards App Development.
 
-Mensen kunnen varieren in skillset in het spectrum tussen design en back-end.
+A buggy UI is _the_ main reason you will lose trust from your visitors. Build a team and culture around quality and improve skills of people that accomplish this.
 
 ### Building a Craft
-* Language styleguides voor HTML CSS en JS
-* Consistentie
-* Helpt nieuwe mensen onderdeel van het team worden
-* Vorm een mening over de keuzes
+* Setup language styleguides for HTML CSS and JS
+* This helps consistency in code
+* Helps new team members get familiar with coding standards
+* Form an opinion on why these choices are made
 
-Helpt je code accountable en predictable te zijn.
+This will help make your code accountable and predictable.
 
-Whitespace, naming conventions, architectuur.
+At first, a team might decide on whitespace, then naming conventions, then architecture, etc.
 
-Standaardiseren van JS test patterns.
+Standardise JS test patterns bases on the language styleguide and choose tools that help your team maintain quality and consistency. E.g. use linting tools for each language, agree on a JS test suite, etc.
 
-Gebruik linting tools die zich aan die guide houden.
+Keep developing and evolving your styleguide, embrace new standards and insights. Having a styleguide should make things easier. If something doesn't make it easier or if it's hard to enforce, it might not be worth it to control.
 
-Zorg ervoor dat je guide doorontwikkeld wordt en omarm nieuwe standaarden. Dit moet het voornamelijk makkelijker maken, als je het niet kan forceren, is het misschien niet de moeite waard om te controleren.
+Make sure code reviews happen often where you make members of your team aware of the guide and code quality. Code reviews and comments help creating discussions and learning opportunites for your team. This will build a culture of sharing knowledge and feedback.
 
-Zorg voor code reviews waarbij je je team bewust maakt van de guide en code kwaliteit. Met code reviews en comments kan je discussies en leermomenten delen met het team. Dit bouwt een cultuur van feedback en delen van kennis.
-
-Styleguides hebben nut, mensen willen code schrijven van hoge kwaliteit.
+Styleguides are useful, people _want_ to write code of high quality.
 
 ### Pattern Libraries
-* Bouw een pattern, pas het op andere plekken toe.
-* Niet kopieren plakken, dan is niet onderhoudbaar.
+* Build a pattern and apply this in certain areas in your application.
+* Don't make it a copy-paste library, it wouldn't be maintainable as code might digress from the library.
 
-Responsive guidelines voor:
+Create responsive guidelines for:
 
 * Breakpoint defaults
 * Grids
@@ -252,22 +244,24 @@ Responsive guidelines voor:
 * Behaviour
 * Perf standards
 * Tooling
-* A11y best practices voor inclusiviteit
+* A11y best practices for inclusiveness
 
-Het is belangrijk om expertise te delen met je hele team, want niemand in je team weet _alles_ van front-end dev. Hiermee til je elkaar naar een hoger niveau.
+It's important to share expertise with your team, because no one knows _everything_ about front-end development. 
+
+Het is belangrijk om expertise te delen met je hele team, want niemand in je team weet _alles_ van front-end dev. This will lift your team to a higher level.
 
 ### UI Library
-* Core patterns
-* Opinionated voor specifieke use cases, niet generiek
-* Stel een lijst van variaties samen van verschillende patterns met regels wanneer je de ene wel of niet toepast
-* Welke patterns willen we standaardiseren?
-* Welke moeten we versimpelen?
+* Core patterns of the application
+* Opinionated for specific use cases that suit _your_ problems, no generic approaches
+* Compose a list of variations of several patterns and setup rules when to apply a variation or not
+* Which pattern should be standardised?
+* Which should be simplified?
 
 Why bother?
 
-* solve problems once
-* more people contrib
-* more time on impactful features
+* Solve problems once
+* More people contributure
+* Spend more time on impactful features
 
 Build -> Review -> Teach -> Build
 
@@ -315,11 +309,16 @@ Instead of us having somebody trick us, we trick ourselves. The web never had a 
 
 Break free from your assumptions.
 
-1) Input is exploding
+**Input is exploding**
+
 1874: Keyboard
+
 1984: Mouse + GUI
+
 1996: Scrollwheel
+
 2005: Camera's
+
 2007: 
 
 * Multi-touch
@@ -340,7 +339,7 @@ Break free from your assumptions.
 * BTLE
 * Siri
 
-2012: Nothing new :D
+2012: Nothing new
 
 2013: Fingerprint
 
@@ -374,7 +373,7 @@ Pointer Events spec normalizes touch, mouse and stylus.
 
 Edge + FF + Chrome support it. Safari opposes. Surprising.
 
-jQuery has Pointer Events Polyfill, PEP.
+jQuery team made Pointer Events Polyfill, PEP.
 
 Think of applying different kinds of inputs in the same way, like using hover and gyroscope to achieve the same effect.
 
@@ -395,11 +394,11 @@ Don't worry about different types of input, don't make erroneous assumptions.
 'From a "do not harm" perspective, my hope is that people are going to stop thinking form factors have particular types of input.'
 
 ## Cheat sheet to a lean website - Barbara Bermes
-People don't like to wait, be resepectful.
+People don't like to wait, be respectful.
 
 Websites are getting bigger, but data is still expensive and latency is high.
 
-Make everybody care about performance.
+Make everybody in your team care about performance.
 
 Feel empowered and encouraged to say no.
 
@@ -426,9 +425,9 @@ Speed testing tools:
 
 Determine critical rendering path.
 
-14k rule: serve the most important content first.
+14k rule: serve the most important content in the first 14k.
 
-Above the fold styles should go inline.
+Above the fold styles should go inline for critical rendering path.
 
 Use async and/or defer to load js as fast as possible and without render blocking. Scripts at the bottom of the page.
 
@@ -449,9 +448,9 @@ Fight latency
 * Use offline storage
 * use HTTP/2 for concurrency and reduced latency.
 
-Use task runnrs to help automate perf issues. Implement in your CI.
+Use task runnrs to help automate perf optimisations. Implement in your CI.
 
-Avoid the yo-yo effect. Lose weight, gain weight. Don't optimize perf once and forget about it. Continuously measure perf.
+Avoid the yo-yo effect. Don't lose weight, then gain weight. Don't optimize perf once and forget about it. Continuously measure perf.
 
 "Browsing should be as simple and fast as turning a page in a magazine"
 - Larry Page
@@ -760,7 +759,7 @@ Best PWA's come from Asia and Indonesia. Low overhead to install on mobile devic
 
 Use a manifest in the <head>, it degrades in browsers that don't support it.
 
-No app store, no gate keepr, no update distribution lag, can work offline, linkable.
+No app store, no gate keeper, no update distribution lag, can work offline, linkable.
 
 Data is really expensive in upcoming countries.
 
@@ -770,7 +769,7 @@ Opera Mini catches requests to sites. It fetches data over a fast connection and
 
 This is why PE is important: Opera Mini does not always exectute all JS on your site. Don't make your site reliant on JS, so you will get the business instead of you competitor who might require JS.
 
-SVG > icon fonts <3
+SVG are better than icon fonts <3 Opera Mini doesn't load custom fonts so it doesn't display icon fonts. SVG's are meant to be used for images, so use it.
 
 "It doesn't matter how smart your phone is if your network is dumb".
 
@@ -793,7 +792,7 @@ ARIA 1.1 - W3C WD 2016
 
 Aria roles, attributes, states.
 
-The only AT that support ARIA are screenreaders.
+The only assistive technologies that support ARIA are screenreaders.
 
 ### Inert elements
 You can 'repair' inert elements with a few attributes.
