@@ -828,3 +828,21 @@ Firefox has a "bug" in which it reorders the keyboard sequence when visual order
 
 "It doesn't have to be perfect. Just a little bit better than yesterday."
 
+## Joining up the dots - Heydon Pickering
+
+Lots of breakthroughs and innovations have occured in human history. Lots of avoidable wars.
+
+Language is like software for our brain. It can be good and it can be shit.
+
+We like to find patterns in things, as a species. Language is a sum total of all of the consensus over what those patterns are.
+
+The web is an easy and quick way to share your ideas and add it to this living system.
+
+Accessibility does not apply to a very specific demographic. Everyone belongs to a certain minority. There is no average person.
+
+Design as you develop. Work with designers, and develop simultaneously.
+
+We need to get better at debate. 
+
+"Revisist natural language. Learn new language features. When we're joined up, our work is joined up."
+
