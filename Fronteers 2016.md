@@ -2,114 +2,124 @@
 
 ## Progressive enhancement and CSS - Ire aderinokun
 
-Blogt op bitsofco.de
+Blogs on bitsofco.de
 
-Meestal is PE toegepast op JS en wordt CSS achterwege gelaten.
+Most of the time PE is applied to JS and CSS hasn't been considered.
 
-State of the web: weinig varieteit in browsers
+State of the web back in 2003: low variety in browsers.
 
-Graceful degradation heeft problemen tov PE:
+Graceful degradation has problems compared to Progressive Enhancement
 
-* het houdt geen rekening met vershcillende behoeften van verschillende bezoekers
-* meestal wordt er alleen op 1 versie terug getest
+* It doesn't take in consideration different needs for different visitors as it degrades to one specific
+* Mostly the degradation is tested one browser version back
 
-PE: "Wbe design must mature and accept the developments of the apst several years" - stephen champeon
+PE: "Web design must mature and accept the developments of the past several years" - Stephen Champeon
 
 "The goal of webdesign is not merely to dazzle but to deliver information to the widest audience"
 
-* Browser landschap is veel diverser tov 2003.
-* Er zijn meer verschillende browser features met veel diverse verschillen onder ondersteuning
-* Meer mensen wereldwijd verbonden met het internet met andere behoeftes
-
+* Browser landscape now is much more diverse than in 2003
+* The are loads more feature with each of them having different levels of support across the browsers
+* More people connected to the internet with different needs
+   
 PE for JS:
-* JS niet aan
-* JS feature niet ondersteund
+
+* JS not enabled
+* JS feature not supported
 
 "Make the website functional without JavaSCript" - Ire
 
-Gebruik Feature detection in JS en polyfill features waar mogelijk.
+Use Feature detection in JS and polyfill features where possible.
 
-PE voor HTML:
+PE for HTML:
 
-* Browser snapt semantische betekenis van elementen mogelijk niet.
-* Aria roles toepassen op html5 elementen voor browsers / clients die het niet ondersteunen
+* Browser possibly doesn't understand semantic meaning of newer elements.
+* Apply ARIA roles to HTML5 elements so the role can be understood by older clients.
 
-PE voor CSS:
+PE for CSS:
 
-* Niet ondersteunde regels / properties / values wordt niet toegepast.
-* We kunnen niet ondersteunde features niet detecteren
-* Er is geen "error" detecting
+* Rules, properties and values that are not supported don't get applied.
+* We can't check for not supported features
+* There is no error detection in CSS
 
-Oplossingen voor PE in CSS:
+Solutions for PE in CSS:
 
 * "start with sensible html"
-* Peanut first! =D
+* Peanut first development! =D
 * "take advantage of the cascade"
-* oudere properties voor nieuwe declareren
-* prefixed props voor unprefixed
+* Declare older properties and values before newer ones.
+* prefixed props before unprefixed
 * Mobile first media queries
 * "What works on desktop, does not immediately work on mobile. What works on mobile is still usable on desktop"
-* Slimme helpers met oudere fallbacks:
+* Use smart helpers with older fallbacks, like for example a text centering helper:
 * text-center -> table-cell + vam -> flex center
-* Last resort: losse stylesheets
-* Cut the mustard, check voor features en geef browsers die het ondersteunen geavanceerdere features
+* Last resort: separate stylesheets for different browsers
+* Cut the mustard, check feature support and apply advanced features in newer browsers
 
 Feature detection in CSS:
 
 * @supports feature queries
 
-`@supports ( (foo: bar) and/or (bar: baz) ) {
-	/* doe iets */
-}`
+```css
+@supports ( (prop: value) and/or (prop: value) ) {
+	/* apply checked feature */
+}
+```
 
-* 70+% ondersteuning voor feature queries
-* Gebruik feature queries als PE ipv een requirement
-* Sensible defaults
+* 70+% support across browsers for feature queries
+* Use feature queries as PE instead of a requirement for something to work. Upgrade it.
+* Use sensible defaults
 
-Het landschap in 2030: "MOAR"
+The landscape of the web in 2030: "MOAR"
 
-* Meer browsers
-* devices
-* technologieën
-* meer mensen online
+* More browsers
+* More devices
+* More technologies
+* More people online
 
-"Leave no one behind" - Stephen Champeon
+> Leave no one behind
+
+— Stephen Champeon
 
 ## Hacking the visual Norm - Nadieh Bremer
 
-"I don't start on interactivity until the visual form is found"
+> "I don't start on interactivity until the visual form is found"
 
-Pokemon!
+— Nadieh
 
-Find the right visual form to visualise data.
+Iterate through several forms of presenting data until you have found the right format to visualise what you mean clearly.
+
+Nadieh uses D3.js heavily to present data in awesomely designed charts.
+
+Pokemon chart!
 
 Using colors to separate groups can create confusion as the colors themselves might me interpreted as grouping or added value to the group.
 
-Voronois are awesome! Very useful for mouseovers over nodes in chart data. Combined with outer circles you can even be more specific in the mouseover region.
+Voronois are awesome! Voronois create "cells" around nodes in your chart. Very useful for i.e. detecting mouseovers over nodes in chart data. Combined with outer circles you can even be more specific in the mouseover region to show extra data of the node being hovered over.
 
-Don't underestime hiding parts of your data that are irrelevant.
+Don't underestimate hiding parts of your data that are irrelevant.
 
 "Bat plot" :'D
 
-Experimenteer met verschillende vormen van je data, zoek de juiste vorm, kleuren, methode, layout, sortering, etc.
+Experiment with different forms of your data, find the right form, colours, method, layout, sorting, etc.
 
-Check zo vroeg mogelijk of het ontwerp matcht met de uiteindelijke data die je krijgt om een zo efficient mogelijke visualisatie te krijgen.
+Check your visual form with real data as soon as possible as mock data might give you a different result. Real data will give you a more efficient view of the end result.
 
 ## How you do what you do is who you are - G Scott Olson
-Functionaliteit te gebruiken met 1 hand
+Think about the interaction your end user has with your app. Take their needs into consideration. Let the user navigate your app with one hand to make it as user friendly as you possibly can.
 
-Apps die dezelfde API gebruiken
+The Paper apps all use the same API endpoints to send and retrieve data.
 
-Paper Web gebruikt React + BackBone + TypeScript.
+Paper Web uses React + BackBone + TypeScript.
 
-Stylus voor CSS + CSS Modules. Inline styles voor components.
+Stylus for CSS + CSS Modules. Inline styles for components.
 
-"What parts of the app nead to be **seamless**?
+> What parts of the app nead to be **seamless**? 
 
-* Niet alles hoeft in hetzelfde framework gemaakt te worden.
-* Niet alles hoeft in 1 file gebundled te worden. Losse bundles voor losse features = beter
+Not every part of the app has to be loaded in one monolithic bundle. Page refreshes between certain areas of your app could be very acceptable. Separate your main app logic from liek the user account flow.
 
-Beetje het wiel opnieuw uitvinden om bestaande web technieken te bouwen in JS. :\
+Not everythin has to be built in the same framework. You could use server-side frameworks or even static pages to present certain parts of your site/app.
+
+Some demos did look like he was reinventing the wheel of already established techniques, but now solved with JS. Spacer components? Aspect ratios? All could be solved with CSS and HTML.
 
 ## Offline, progressive and multithreaded: a peek at the wbe apps of the future - Nolan Lawson
 "...not attributed to my employer.." Bla bla. Really MS?
@@ -121,32 +131,31 @@ PWA!
 * Push notifications
 * IndexedDB
 
-Wat bereiken we met PWA?
+What can we achieve with PWA?
 
-HTML5 was een reactie tegen Flash en Silverlight in ~2009. Net op tijd op desktop vlak voor de opmars van mobile.
+HTML5 was a response to Flash and Silverlight in around 2009. Just in time for the advance of mobile.
 
-PWA is een reactie op native mobile apps.
+PWA is a response to native mobile apps.
 
 ### Offline
-Het web is niet goed met offline en multithreaded, juist wel met progressive.
-PWA brengt offline en multithreaded naar het web.
+The web isn't very good with offline and multithreading, but it ís really progressive in contrast to native apps. PWA brings offline and multithreading to the web.
 
-Offline-first gaat over snelheid. Niet omdat je in de trein zit, maar omdat data op je device VELE malen sneller is te bereiken dan via het netwerk.
+Offline-first is about speed. Not because you're in the train or have crappy WiFi, but because data on your device can be reached much faster in several orders of magnitude compare to the network.
 
 Service worker:
 
-* Cache API voor static data > appcache
-* IndexedDB voor dynamische data > localstorage / websql
+* Cache API for static data is better than appcache
+* IndexedDB for dynamic data is better than LocalStorage or the deprecated WebSQL
 
 ### Progressive
-PE toepassen
+Apply progressive enhancement
 
-"In 2016 it's okay to build a website that doesn't work without JavaScript" Hmm..
+"In 2016 it's okay to build a website that doesn't work without JavaScript" Hmm.. Is it?
 
-Zorg ervoor dat de UX goed is *totdat* er JS is ingeladen om dan de UX te verbeteren.
+Make sure the UX is already good, **until** JS has loaded and can be improved upon with JS.
 
 ### Multithreaded
-Web workers gebruiken voor data operaties. Losse thread. Laat de single-threaded UI thread alleen de UI updaten zodat er "ruimte" overblijft voor complexe functies.
+Web Workers can be used for asynchronous data operations in a separate thread, so you can offload the heavy UI thread to prevent jank. Let the UI thread only update the UI when needed, feed it data from the separate Web Worker thread so that leaves breathing room for complex DOM operations in the UI thread.
 
 ## Multi-user WebVR - Martin Splitt
 WebVR kan toegepast worden voor verschillende doeleinden
