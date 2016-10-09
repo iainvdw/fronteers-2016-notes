@@ -1,8 +1,9 @@
-# Fronteers 2016
+# Fronteers 2016 Notes - Day 1 and 2
 
 ## Progressive enhancement and CSS - Ire aderinokun
+**[Slides](https://speakerdeck.com/ireade/what-about-css-progressive-enhancement-and-css)**
 
-Blogs on bitsofco.de
+Blogs on [bitsofco.de](http://bitsofco.de)
 
 Most of the time PE is applied to JS and CSS hasn't been considered.
 
@@ -81,6 +82,7 @@ The landscape of the web in 2030: "MOAR"
 — Stephen Champeon
 
 ## Hacking the visual Norm - Nadieh Bremer
+**[Slides](https://nbremer.github.io/hackingthevisualnorm/#/before-starting)**
 
 > "I don't start on interactivity until the visual form is found"
 
@@ -121,7 +123,9 @@ Not everythin has to be built in the same framework. You could use server-side f
 
 Some demos did look like he was reinventing the wheel of already established techniques, but now solved with JS. Spacer components? Aspect ratios? All could be solved with CSS and HTML.
 
-## Offline, progressive and multithreaded: a peek at the wbe apps of the future - Nolan Lawson
+## Offline, progressive and multithreaded: a peek at the web apps of the future - Nolan Lawson
+**[Slides](https://nolanlawson.github.io/fronteers-2016/#/)**
+
 "...not attributed to my employer.." Bla bla. Really MS?
 
 PWA! 
@@ -158,6 +162,8 @@ Make sure the UX is already good, **until** JS has loaded and can be improved up
 Web Workers can be used for asynchronous data operations in a separate thread, so you can offload the heavy UI thread to prevent jank. Let the UI thread only update the UI when needed, feed it data from the separate Web Worker thread so that leaves breathing room for complex DOM operations in the UI thread.
 
 ## Multi-user WebVR - Martin Splitt
+**[Slides](https://docs.google.com/presentation/d/1h1JeRFoxL_Vp4hFQrsqvGe-tM-02PPMG5p9tBwpW-bQ/edit#slide=id.p)**
+
 WebVR can be applied in a number of situations:
 
 * Medicine
@@ -208,6 +214,8 @@ Visualising Metro occupancy so extra metro carts can be deployed when needed.
 Visualising crowdedness in certain areas of a restaurant using WiFI and Bluetooth position tracking.
 
 ## Scaling front-end development - Monika Piotrowicz
+**[Slides](http://www.slideshare.net/mpiotrowicz/building-scaling-a-front-end-practice-team)**
+
 "What is a front-end developer?"
 
 Front-end developers position themselves on a 'spectrum' between Design and App Development, though most new techniques today gravitate more towards App Development.
@@ -266,42 +274,49 @@ Why bother?
 Build -> Review -> Teach -> Build
 
 ## Surveying the landscape - Peter Gasston
-Het web heeft een risico. Veel interacties in messaging, voice, apps.
+**[Slides](https://speakerdeck.com/stopsatgreen/surveying-the-landscape-fronteers)**
 
-Technieken van de web worden gebruikt, afgevangen en doorgestuurd naar apps.
+The web is at risk. Lots of interactions moving to messaging, voice controls and apps. The web is not going away, but it is at risk of being marginalized.
 
-Veel bedrijven gaan app-only.
+Twitter and Facebook started on the web, but they're increasingly focusing on the apps right now. Apps like Vine and Instagram hardly have any interaction on the web. You're able to view stuff but not able to create new content.
 
-App gates die de site "blokkeren" en vertellen dat je de app moet installeren.
+Links on the web are intercepted and redirected to apps, like Apple does on iOS.
 
-Ads vertegenwoordingen 9% van de visuele ruimte, maar nemen meer dan de helft van laadtijd en bandbreedte in beslag.
+Lots of companies are going the app-only strategy as maintaing a website with the same content is costly.
 
-21% van mobile users gebruiken adblockers op het web.
+The web is riddled with 'app gates' that block a site when you visit it and tell you that you should install the app
 
-Ad markt loopt in de miljarden qua inkomsten en mogelijk verloren omzet door adblockers.
+Ads represent around 9% of the visual space on a website, but take up half of the loading time and bandwidth of a webpage.
 
-Start geen website. Individuele websites doen er niet meer toe.
-- Evan Williams
+21% of mobile users are using adblockers on the web now.
 
-400 uitgevers overwegen naar Medium over te stappen ipv een eigen website te runnen.
+Income from ads runs in the billions, losses due to adbockers run in billions as well.
 
-0.85$ uit elke dollar gaat naar Google en FB ads.
+> Dont start a website. Individual websites don't matter anymore
 
-De helft van de mensen die online zijn gebruiken FB.
+— Evan Williams
 
-Leesvoer: 'Upload complete' - The Awl.
+There are around 400 publishes considering moving to Medium instead of running their own website.
 
-In azie meer sommige landen meer inwoners die FB gebruiken dan "het internet".
+85 cents out of every dollar spent on ads, are spent on Google and FB ads.
 
-"Web pages are the slowest content there is"
+Half of people online today, use Facebook.
 
-Instant articles laden 10x sneller dan het web.
+Stuff to read: 'Upload complete' - The Awl.
 
-Canvas ads laden 10x sneller dan het web.
+In Asia some countries use Facebook more than the web. People consider Facebook as it is the web in some countries.
 
-"Facebook becomes the mobile internet".
+> Web pages are the slowest content there is
+
+Instant articles and canvas ads load 10x faster than web pages do.
+
+> Facebook becomes the mobile internet
+
+
 
 ## Adapting to input - Jason Grigsby
+**[Slides](https://speakerdeck.com/grigs/adapting-to-input)**
+
 In the beginning the web was formless. We gave it form when the web was made commercial.
 
 Consensual hallucination:
@@ -456,6 +471,7 @@ Avoid the yo-yo effect. Don't lose weight, then gain weight. Don't optimize perf
 - Larry Page
 
 ## Building responsive CSS components - Zell Liew
+**[Slides](https://github.com/zellwk/responsive-css-components-slides)**
 
 How do we build responsive components?
 
@@ -523,6 +539,8 @@ Use vertical rhythm (baseline) helper classes to help with scaling, repetition.
 Take localization in the design process, compensate for different word or sentence lengts in the design process when your project has to be localized.
 
 ## CSP STS PKP SRI ETC OMG WTF BBQ - Scott Helme
+**[Slides](https://scotthelme.co.uk/static/talks/CSP%20STS%20PKP%20SRI%20ETC%20OMG%20WTF%20BBQ.pdf)**
+
 - a.k.a. Modern Web Security Standards
 
 ### HTTPS
@@ -610,6 +628,8 @@ Premium SSL certificates are a dated model, it should be enabled by default. Mig
 Anywhere you can inject the security headers is a good place. Server config, application level, load balancers, etc.
 
 ## Functional animation - Sarah Drasner
+**[Slides](http://slides.com/sdrasner/functional-fronteers#/)**
+
 Consultant in UX Design and engineering
 
 Staff writer for CSS tricks.
@@ -724,6 +744,8 @@ Web animation workshops with Val Head.
 SVG animation book coming out next year.
 
 ## World-wide web, not wealth western web - Bruce Lawson
+**[Slides](https://speakerdeck.com/brucel/parisweb-paris-30-september-2016)**
+
 HTML-coholic :')
 
 Thanks Bruce for the awesome Rick Roll.
@@ -783,6 +805,8 @@ What can we do?
 * Test opera mini
 
 ## Technologic (Human afterall): Accessibility Mix - Leonie Watson
+**[Slides](http://ljwatson.github.io/decks/2016/fronteers/index.html#)**
+
 Native browser elements have expected interactions when interacted with.
 
 New a11y API: JS API - Accessibility Object Model
